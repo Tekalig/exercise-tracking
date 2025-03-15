@@ -24,10 +24,16 @@ now = datetime.now()
 date = now.strftime("%d-%m-%Y")
 time = now.strftime("%H:%M:%S")
 for exe in data:
-    user_data = {"workout": {"date": date, "time": time, "exercise": exe["name"], "duration": exe["duration_min"],
-                             "calories": exe["nf_calories"]}}
+    user_data = {
+        "workout": {
+            "date": date,
+            "time": time,
+            "exercise": exe["name"],
+            "duration": exe["duration_min"],
+            "calories": exe["nf_calories"],
+        }
+    }
 
     response = requests.post(url=SHEET_ENDPOINT, json=user_data)
     response.raise_for_status()
     print(response.json()["workout"])
-
