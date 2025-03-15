@@ -1,2 +1,5 @@
 python-dotenv
 requests
+streamlit
+httpx
+streamlit_extras
