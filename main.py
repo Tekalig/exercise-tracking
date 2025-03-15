@@ -1,5 +1,5 @@
 import os
-from app.gui_app import app
+from app.app import app
 
 
 def initialize_app():
