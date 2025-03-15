@@ -1,11 +1,18 @@
+import os
 import requests
 from datetime import datetime
+from dotenv import load_dotenv
 
-NLE_ENDPOINT = "https://trackapi.nutritionix.com/v2/natural/exercise"
-SHEET_ENDPOINT = "https://api.sheety.co/daff83fbc6d259b51fe1d8967832a618/exerciseTracking/workout"
+load_dotenv()
+
+NLE_ENDPOINT = os.getenv("NLE_ENDPOINT")
+SHEET_ENDPOINT = os.getenv("SHEET_ENDPOINT")
+APP_ID = os.getenv("APP_ID")
+APP_KEY = os.getenv("APP_KEY")
+
 headers = {
-    "x-app-id": "b3a4e181",
-    "x-app-key": "00d72269bd5b1d1c1a39c4eaced5ffaa",
+    "x-app-id": APP_ID,
+    "x-app-key": APP_KEY,
 }
 
 nle_pram = {"query": input("Tell me what exercise you do: ")}
